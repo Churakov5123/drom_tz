@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\Comment;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Faker\Generator as Faker;
 use Faker\Factory;
 
 
@@ -28,8 +27,8 @@ class CommentApiTest extends TestCase
     public function testCanCreatItem()
     {
         $formData = [
-            'name' => 'first name',
-            'text' => 'Lorem ipsum blablalblblblbl'
+            'name' => $this->faker->name,
+            'text' => $this->faker->text
         ];
 
         $this->withoutExceptionHandling();
